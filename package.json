@@ -1,0 +1,17 @@
+{
+  "name": "twitch-gif-commander",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "tmi.js": "^1.8.2",
+    "websocket": "^1.0.34"
+  }
+}
