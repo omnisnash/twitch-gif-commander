@@ -1,8 +1,8 @@
 # Twitch GIF Commander
 
-Display a GIF in a browser (to be captured with OBS), which change regarding Twitch chat messages content.
+Display a GIF Or MP4 (or content in general for web page) in a browser (to be captured with OBS), which change regarding Twitch chat messages content.
 
-Quick project developped for @[TheDrakakis](https://github.com/TheDrakakis), feel free to reuse.
+Fork from project developped for @[Omnisnash](https://github.com/omnisnash/twitch-gif-commander), feel free to reuse.
 
 ![preview](./doc/preview.gif)
 
