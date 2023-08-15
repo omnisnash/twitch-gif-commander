@@ -16,7 +16,7 @@ class WebsocketService {
     }
 
     sendMessage = (message) => {
-        this.activeConnections.forEach(con => con.send(message));
+        this.activeConnections.forEach(con => con.send(JSON.stringify(message)));
     }
 
     _setupListeners = () => {

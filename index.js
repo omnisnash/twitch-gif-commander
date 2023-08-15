@@ -27,22 +27,38 @@ const twitchService = new TwitchService(onTwitchMessage);
 twitchService.start(config.twitch.botUsername, config.twitch.oauthToken, config.twitch.channelName);
 console.log("→ Track chat from: https://twitch.tv/" + config.twitch.channelName);
 
+var isWaiting = false;
+
 function onTwitchMessage(message) {
+        
+    if (isWaiting) { console.log("On waiting Sry"); return ;}
+
     const match = messageMatchGif(message);
 
     if (match) {
+        isWaiting = true
         websocketService.sendMessage(match)
 
         // Reset the timmer if the non-default gif is displayed
         if (this.timmer) {
             clearTimeout(this.timmer);
         }
+   
+        // If img then need to put back original img
+        if (match["type"] === "image") {
+            // Reset the default Gif after a after `config.resetAfter` ms
+            this.timmer = setTimeout(() => {
+                websocketService.sendMessage(config.defaultContent)
+                this.timmer = null;
+            }, config.resetAfter);
+        }
 
-        // Reset the default fid after a after `config.resetAfter` ms
-        this.timmer = setTimeout(() => {
-            websocketService.sendMessage("default")
-            this.timmer = null;
-        }, config.resetAfter);
+
+                
+        setTimeout(() => { 
+            if (isWaiting) { isWaiting = false; console.log("Ready for msg");}
+        }, config.timeBetweenMsg);
+
     }
 }
 

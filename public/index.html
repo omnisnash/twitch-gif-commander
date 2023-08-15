@@ -2,10 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Twitch GIF Commander</title>
+  <title>Twitch Content Commander</title>
   <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img id="current-gif" src="./gif/default.gif">
+  <div id="display">
+    <img id="current-img" src="./content/default.png">
+    <video id="current-video"  height="500" width="500" style="display: none;">
+      <source id="current-video-src" src="./content/nothing.not" type="video/mp4" >
+    </video>
+    
+  </div>
 </body>
 </html>

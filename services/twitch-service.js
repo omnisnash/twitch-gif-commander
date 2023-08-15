@@ -1,6 +1,8 @@
 const tmi = require('tmi.js');
+const config = require('./../config.json');
 
 class TwitchService {
+
     constructor(onMessage) {
         this.onMessage = onMessage;
     }
@@ -20,7 +22,10 @@ class TwitchService {
 
         const onMessageHandler = (target, context, msg, self) => {
             if (self) { return; } // Ignore messages from the bot
+
+            this._isWaiting = true;
             this.onMessage(msg.trim());
+
         }
 
         client.on('message', onMessageHandler);
