@@ -4,7 +4,7 @@ Display a GIF Or MP4 (or any image / video) in a browser (to be captured with OB
 
 Fork from project developped for @[Omnisnash](https://github.com/omnisnash/twitch-gif-commander), feel free to reuse.
 
-![preview](https://imgur.com/a/UQNQe9y)
+![preview]([[https://imgur.com/a/UQNQe9y]()](https://i.imgur.com/c0UgHMH.mp4))
 
 ## Installation
 
